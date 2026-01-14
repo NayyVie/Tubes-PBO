@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="VeilSideNew" default="default" basedir="." xmlns:sonar="antlib:org.sonar.ant">
+    <description>Builds, tests, and runs the project IbnuCashierTubes.</description>
+    
+    <import file="nbproject/build-impl.xml"/>
+
+
+    <path id="sonar.classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <taskdef uri="antlib:org.sonar.ant" resource="org/sonar/ant/antlib.xml" classpathref="sonar.classpath"/>
+
+    <target name="sonar" depends="compile">
+         <property name="sonar.host.url" value="http://localhost:9000" />
+         <property name="sonar.projectKey" value="VeilSideNew" />
+         <property name="sonar.projectName" value="VeilSideNew" />
+         <property name="sonar.projectVersion" value="1.0" />
+         <property name="sonar.sources" value="src" />
+         
+         <property name="sonar.java.binaries" value="build/web/WEB-INF/classes" />
+         
+         <property name="sonar.java.libraries" value="lib/*.jar" />
+         
+         <property name="sonar.login" value="sqp_db00496f04a7b539b783101224a8f773ff1ceb21" />
+         
+         <sonar:sonar />
+    </target>
+
+</project>
